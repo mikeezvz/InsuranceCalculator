@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.navbar-custom {
+  background-color: #B22222; /* Karmesinrot */
+  margin: 20px auto; /* Zentriert die Navbar mit Abstand zu den Rändern */
+  width: 80%; /* Setzt die Breite der Navbar */
+  border-radius: 10px; /* Optional: abgerundete Ecken */
+  padding-left: 20px;
+}
+

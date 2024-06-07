@@ -1,11 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; // Importiere die benutzerdefinierte CSS-Datei
 
 function App() {
   return (
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">Navbar</a>
+        <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
+          <a className="navbar-brand" href="#"></a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -21,7 +22,7 @@ function App() {
                 <a className="nav-link" href="#">Pricing</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+                <a className="nav-link" href="#">Sricing Pex</a>
               </li>
             </ul>
           </div>
