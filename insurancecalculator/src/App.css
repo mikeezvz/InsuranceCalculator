@@ -37,10 +37,42 @@
   }
 }
 .navbar-custom {
-  background-color: #B22222; /* Karmesinrot */
-  margin: 20px auto; /* Zentriert die Navbar mit Abstand zu den Rändern */
-  width: 80%; /* Setzt die Breite der Navbar */
-  border-radius: 10px; /* Optional: abgerundete Ecken */
+  background-color: #B22222; 
+  margin: 20px auto; 
+  width: 80%; 
+  border-radius: 10px;
   padding-left: 20px;
 }
 
+.nav-logo {
+  width: 40px; 
+  height: auto;
+}
+
+.nav-link.active {
+  color: white;
+}
+
+.ms-auto{
+  margin-right: 10px;
+  font-size: 1.7rem;
+}
+
+.btn:hover,
+.btn{
+  background-color: #B22222 !important; 
+  border-color: #B22222 !important; 
+  color: white !important; 
+  box-shadow: none !important;
+  border: 2px solid transparent !important;
+  padding: 35px; 
+}
+
+.btn:active{
+  background-color: #8d1212 !important; 
+  border-color: #B22222 !important;
+  color: white !important;
+  box-shadow: none !important;
+  border: 2px solid transparent !important; 
+  padding: 35px;
+}
