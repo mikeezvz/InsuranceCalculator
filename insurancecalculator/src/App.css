@@ -1,16 +1,41 @@
 .App {
   text-align: center;
 }
+.Contact,
+.AboutUs,
+.Calculator {
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  text-align: left;
+}
+
+.plan {
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 30px;
+  height: 500px;
+}
+.plan-col {
+  height: 500px;
+}
+
+.addons{
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 30px;
+  height: 250px;
+  width: 200%;
+}
+
+.plandetails{
+  background-color: rgba(128, 128, 128, 0.1);
+  padding: 30px;
+  height: 250px;
+  width: 65%;
+}
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -48,17 +73,6 @@
 .ms-auto{
   margin-right: 10px;
   font-size: 1.7rem;
-}
-
-#copyright{
-  font-size: 1rem;
-}
-
-
-.language{
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn:hover,
