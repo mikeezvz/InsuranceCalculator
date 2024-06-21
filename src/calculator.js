@@ -1,8 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
-import { Row, Col, Container, Carousel, Button, Image, Form } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Row, Col, Container, Card, Button, Form } from 'react-bootstrap';
 
 function Calculator() {
+  const [personalInfo, setPersonalInfo] = useState({
+    email: '',
+    phone: ''
+  });
+
+  const [persons, setPersons] = useState([{ firstName: '', lastName: '', birthday: '' }]);
   const [insurancePremium, setInsurancePremium] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [coverage, setCoverage] = useState(0);
@@ -14,6 +19,29 @@ function Calculator() {
     pureFinancialLoss: false,
     sportsLeisureDamage: false,
   });
+
+  const handlePersonalInfoChange = (event) => {
+    const { name, value } = event.target;
+    setPersonalInfo((prevInfo) => ({
+      ...prevInfo,
+      [name]: value,
+    }));
+  };
+
+  const handleInputChange = (index, event) => {
+    const { name, value } = event.target;
+    const newPersons = [...persons];
+    newPersons[index][name] = value;
+    setPersons(newPersons);
+  };
+
+  const addPerson = () => {
+    setPersons([...persons, { firstName: '', lastName: '', birthday: '' }]);
+  };
+
+  const countPersons = () => {
+    return persons.length;
+  };
 
   const handlePlanSelect = (plan) => {
     let basePremium = 0;
@@ -35,12 +63,12 @@ function Calculator() {
 
     setSelectedPlan(plan);
     setCoverage(planCoverage);
-    setInsurancePremium(basePremium + addOnPremium);
+    setInsurancePremium((basePremium + addOnPremium) * countPersons());
   };
 
   const handleAddOnChange = (event) => {
     const { id, checked } = event.target;
-    setAddOns(prevState => {
+    setAddOns((prevState) => {
       const newAddOns = { ...prevState, [id]: checked };
       let basePremium = 0;
       if (selectedPlan === 'plan1') basePremium = 20;
@@ -48,21 +76,123 @@ function Calculator() {
       if (selectedPlan === 'plan3') basePremium = 80;
 
       let addOnPremium = Object.values(newAddOns).filter(Boolean).length * 10;
-
-      setInsurancePremium(basePremium + addOnPremium);
+      const totalPremium = (basePremium + addOnPremium) * countPersons();
+      setInsurancePremium(totalPremium);
 
       return newAddOns;
     });
-  };
-  return (
+  };  return (
     <div className='Calculator'>
-      <Row>
-        <Col>
-        <h1>Insurance calculator</h1>
+       <h1>Your information</h1>
+        <br></br>
+        <br></br>
+       <Row>
+        <Col md={6}>
+          <Card className="mb-4">
+            <Card.Body>
+              <Card.Title>Contact Information</Card.Title>
+              <Form>
+                <Form.Group controlId="email">
+                  <Form.Label>E-Mail</Form.Label>
+                  <Form.Control type="email" placeholder="E-Mail" />
+                </Form.Group>
+                <Form.Group controlId="phone">
+                  <Form.Label>Phone Nr.</Form.Label>
+                  <Form.Control type="tel" placeholder="Phone Nr." />
+                </Form.Group>
+              </Form>
+            </Card.Body>
+          </Card>
         </Col>
       </Row>
+      <Row>
+        <Col md={6}>
+          <Card className="mb-4">
+            <Card.Body>
+              <Card.Title>Address</Card.Title>
+              <Form>
+                <Form.Group controlId="residence">
+                  <Form.Label>Place of Residence</Form.Label>
+                  <Form.Control type="text" placeholder="Place of Residence" />
+                </Form.Group>
+                <Form.Group controlId="zipCode">
+                  <Form.Label>Zip Code</Form.Label>
+                  <Form.Control type="text" placeholder="Zip Code" />
+                </Form.Group>
+                <Form.Group controlId="street">
+                  <Form.Label>Street</Form.Label>
+                  <Form.Control type="text" placeholder="Street" />
+                </Form.Group>
+                <Form.Group controlId="houseNumber">
+                  <Form.Label>House Number</Form.Label>
+                  <Form.Control type="text" placeholder="House Number" />
+                </Form.Group>
+              </Form>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <Card className="mb-4">
+        <Card.Body>
+          <Card.Title>Persons to be insured</Card.Title><p id='cardtitle'>(including yourself)</p>
+          {persons.map((person, index) => (
+            <Form key={index}>
+              <Row className="mb-3">
+                <Col md={1} className="d-flex align-items-center">
+                  <div>{index + 1}</div>
+                </Col>
+                <Col md={3}>
+                  <Form.Group controlId={`firstName${index}`}>
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="First Name"
+                      name="firstName"
+                      value={person.firstName}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={3}>
+                  <Form.Group controlId={`lastName${index}`}>
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Last Name"
+                      name="lastName"
+                      value={person.lastName}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Form.Group>
+                </Col>
+                <Col md={3}>
+                  <Form.Group controlId={`birthday${index}`}>
+                    <Form.Label>Birthday</Form.Label>
+                    <Form.Control
+                      type="date"
+                      name="birthday"
+                      value={person.birthday}
+                      onChange={(event) => handleInputChange(index, event)}
+                    />
+                  </Form.Group>
+                </Col>
+              </Row>
+            </Form>
+          ))}
+          <Button onClick={addPerson} variant="primary">
+            Add Person
+          </Button>
+          <br></br>
+          <br></br>
+          <p>Anzahl der Personen: {countPersons()}</p>
+        </Card.Body>
+      </Card>
       <br></br>
-      <br></br>
+      <Row>
+        <Col>
+        <h1>Plans</h1>
+        </Col>
+      </Row>
       <Row>
         <Col>
         <h3>View our plans.</h3>
@@ -197,14 +327,22 @@ function Calculator() {
       <br></br>
       <br></br>
       <Row>
-        <Col>
-        <div className='plandetails'>
-        <h2>Plan Details</h2>
-        <h4>Coverage: CHF {coverage}</h4>
-        <h4>Total Insurance Premium: CHF {insurancePremium}</h4>
-        </div>
-        </Col>
-      </Row>
+  <Col>
+    <div className='plandetails'>
+      <h2>Plan Details</h2>
+      <h4>Persons:</h4>
+      <ul>
+        {persons.map((person, index) => (
+          <li key={index}>
+            {person.firstName} {person.lastName}, Birthday: {person.birthday}
+          </li>
+        ))}
+      </ul>
+      <h4>Coverage: CHF {coverage}</h4>
+      <h4>Total Insurance Premium: CHF {insurancePremium}</h4>
+    </div>
+  </Col>
+</Row>
       <br></br>
       <br></br> 
       <Row>

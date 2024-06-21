@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Navbar, Nav, Image, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Image, Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import logo from './Zogly.png';
