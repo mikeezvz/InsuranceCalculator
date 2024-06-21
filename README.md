@@ -15,7 +15,7 @@ Um mit dem Projekt zu beginnen, klont man das Repository und wechselt dann in Pr
 
 ``` bash
 git clone https://github.com/mikeezvz/InsuranceCalculator.git
-cd private-liability-insurance-calculator
+cd InsuranceCalculator
 npm install
 ```
 
@@ -53,10 +53,10 @@ Die App verwendet React Router für die Navigation. Die Datei App.js enthält di
 Das Projekt verwendet die folgenden Abhängigkeiten:
 
 ```
-    React
-    React Bootstrap
-    React Router Dom
-    Bootstrap
+React
+React Bootstrap
+React Router Dom
+Bootstrap
 ```
 
 Installiere alle Abhängigkeiten mit:
@@ -74,11 +74,11 @@ npm i react-router-dom
 Welcome to the personal liability insurance calculator. This application helps to calculate liability insurance coverage and costs. The app provides information about locations, insurance, coverage by different plans, contents of different plans etc.
 
 ## Table of Contents
-- Installation](#installation)
-- Usage](#usage)
-- Components](#components)
-- Navigation](#navigation)
-- Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Components](#components)
+- [Navigation](#navigation)
+- [Dependencies](#dependencies)
 
 ## Installation
 
@@ -86,7 +86,7 @@ To start the project, clone the repository and then change to the project direct
 
 ``` bash
 git clone https://github.com/mikeezvz/InsuranceCalculator.git
-cd private-liability-insurance-calculator
+cd Insurancecalculator
 npm install
 ```
 
@@ -124,10 +124,10 @@ The app uses React Router for navigation. The App.js file contains the route con
 The project uses the following dependencies:
 
 ```
-    React
-    React Bootstrap
-    React Router Dom
-    bootstrap
+React
+React Bootstrap
+React Router Dom
+Bootstrap
 ```
 
 Install all dependencies with:
