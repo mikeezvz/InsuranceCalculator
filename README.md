@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Willkommen zum Privathaftpflichtversicherungs Rechner. Diese Anwendung hilft, den Haftpflichtversicherungsschutz und die Kosten zu berechnen. Die App bietet Informationen über Standorte, die Versicherung, Deckung durch verschiedene Pläne, Inhalte der verschiedenen Pläne etc.
 
-## Available Scripts
+## Inhaltsverzeichnis
+- [Installation](#installation)
+- [Verwendung](#verwendung)
+- [Komponenten](#komponenten)
+- [Navigation](#navigation)
+- [Abhängigkeiten](#abhängigkeiten)
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+Um mit dem Projekt zu beginnen, klont man das Repository und wechselt dann in Projektverzeichnis
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+``` bash
+git clone https://github.com/mikeezvz/InsuranceCalculator.git
+cd private-liability-insurance-calculator
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Verwendung
 
-### `npm test`
+Um den Entwicklungsserver zu starten, führen Sie aus:
+``` bash
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Öffne http://localhost:3000 in deinem Browser, um die App anzusehen.
 
-### `npm run build`
+## Komponenten
+### App.js
+Die Hauptkomponente, die das Routing und die Navigation einrichtet.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### homepage.js
+Homepage, Landing-Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### calculator.js
+Seite mit Versicherungsrechner. Hier kann man den gewünschten Plan und Zusatzleistungen auswählen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### aboutus.js
+Seite mit Informationen über die Versicherung als Unternehmen.
 
-### `npm run eject`
+### contact.js 
+Seite mit Kontaktformular. Hier kann man Betreff und Anliegen angeben.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Navigation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Die App verwendet React Router für die Navigation. Die Datei App.js enthält die Routen-Konfiguration unter Verwendung des node_module `react-router-dom.`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Abhängigkeiten
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Das Projekt verwendet die folgenden Abhängigkeiten:
 
-## Learn More
+```
+    React
+    React Bootstrap
+    React Router Dom
+    Bootstrap
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Installiere alle Abhängigkeiten mit:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+``` bash
 
-### Code Splitting
+npm install
+npm i react-bootstrap
+npm i react-router-dom
+```
+---------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# About
 
-### Analyzing the Bundle Size
+Welcome to the personal liability insurance calculator. This application helps to calculate liability insurance coverage and costs. The app provides information about locations, insurance, coverage by different plans, contents of different plans etc.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Table of Contents
+- Installation](#installation)
+- Usage](#usage)
+- Components](#components)
+- Navigation](#navigation)
+- Dependencies](#dependencies)
 
-### Making a Progressive Web App
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To start the project, clone the repository and then change to the project directory
 
-### Advanced Configuration
+``` bash
+git clone https://github.com/mikeezvz/InsuranceCalculator.git
+cd private-liability-insurance-calculator
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Usage
 
-### Deployment
+To start the development server, run:
+``` bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Open http://localhost:3000 in your browser to view the app.
 
-### `npm run build` fails to minify
+## Components
+### App.js
+The main component that sets up the routing and navigation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### homepage.js
+Homepage, landing page
+
+### calculator.js
+Page with insurance calculator. Here you can select the desired plan and additional services.
+
+### aboutus.js
+Page with information about the insurance company.
+
+### contact.js 
+Page with contact form. Here you can enter subject and request.
+
+## Navigation
+
+The app uses React Router for navigation. The App.js file contains the route configuration using the node_module `react-router-dom.`.
+
+## Dependencies
+
+The project uses the following dependencies:
+
+```
+    React
+    React Bootstrap
+    React Router Dom
+    bootstrap
+```
+
+Install all dependencies with:
+
+``` bash
+
+npm install
+npm i react-bootstrap
+npm i react-router-dom
+```
