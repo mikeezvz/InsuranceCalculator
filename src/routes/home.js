@@ -1,12 +1,12 @@
 import React from 'react';
 import { Row, Col, Container, Carousel, Button, Image } from 'react-bootstrap';
-import handy from './images/brokenhandy.jpg';
-import car from './images/brokencar.png';
-import dish from './images/brokendish.jpg';
-import caricon from './images/car.png';
-import houseicon from './images/house.png';
-import cybericon from './images/padlock.png';
-import map from './images/map.png';
+import car from '../images/brokencar.png';
+import dish from '../images/brokendish.jpg';
+import caricon from '../images/car.png';
+import houseicon from '../images/house.png';
+import cybericon from '../images/padlock.png';
+import map from '../images/map.png';
+import handy from '../images/brokenhandy.jpg';
 
 function Home() {
   return (

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Row, Col, Container, Card, Button, Form } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Calculator() {
   const [personalInfo, setPersonalInfo] = useState({
     email: '',
     phone: ''
   });
+
+  const navigate = useNavigate();
 
   const [persons, setPersons] = useState([{ firstName: '', lastName: '', birthday: '' }]);
   const [insurancePremium, setInsurancePremium] = useState(0);
@@ -19,6 +22,13 @@ function Calculator() {
     pureFinancialLoss: false,
     sportsLeisureDamage: false,
   });
+
+const savePlanDetails = () => {
+  localStorage.setItem('selectedPlan', selectedPlan);
+  localStorage.setItem('persons', JSON.stringify(persons));
+  localStorage.setItem('coverage', coverage);
+  localStorage.setItem('insurancePremium', insurancePremium);
+};
 
   const handlePersonalInfoChange = (event) => {
     const { name, value } = event.target;
@@ -34,6 +44,13 @@ function Calculator() {
     newPersons[index][name] = value;
     setPersons(newPersons);
   };
+
+ 
+
+  const handleCheckout = () => {
+    navigate('/checkout');
+    savePlanDetails ();
+  }
 
   const addPerson = () => {
     setPersons([...persons, { firstName: '', lastName: '', birthday: '' }]);
@@ -216,6 +233,7 @@ function Calculator() {
           <div className='addons'>
           <h2>Optional Add-ons</h2>
           <p className='price'>+CHF 10 per Add-on</p>
+      
       <Row>
         <Col>
           <Form.Check 
@@ -270,8 +288,8 @@ function Calculator() {
             type="checkbox" 
             id="sports-leisure-damage" 
             label="Sports and Leisure Damage" 
-            checked={addOns.sportsLeisureDamage}
             onChange={handleAddOnChange}
+            checked={addOns.sportsLeisureDamage}
           />
         </Col>
       </Row>
@@ -298,6 +316,7 @@ function Calculator() {
           <div className='plan'>
           <h2>Plan 3</h2>
           <p className='price'>CHF 80/month</p>
+          <h3>Includes</h3>
           <ul>
             <li>Personal Injury</li>
             <li>Property Damage</li>
@@ -313,6 +332,8 @@ function Calculator() {
           </div>
         </Col>   
       </Row>
+      <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -347,7 +368,9 @@ function Calculator() {
       <br></br> 
       <Row>
         <Col>
-        <Button>Checkout</Button>
+        <Button
+        onClick={handleCheckout}
+        >Checkout</Button>
         </Col>
       </Row>
     </div>

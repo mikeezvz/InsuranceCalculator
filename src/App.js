@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Image, Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import logo from './Zogly.png';
-import Home from './home';
-import Calculator from './calculator';
-import Contact from './contact';
-import AboutUs from './aboutus';
+import Home from './routes/home';
+import Calculator from './routes/calculator';
+import Contact from './routes/contact';
+import AboutUs from './routes/aboutus';
+import Checkout from './routes/checkout';
+import Success from './routes/success';
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/sucess" element={<Success />}/>
           </Routes>
           <div className='Footer'>
             <Row>
