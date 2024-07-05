@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.790df153.css",
+    "main.js": "/static/js/main.e0ee049d.js",
+    "static/js/488.54618227.chunk.js": "/static/js/488.54618227.chunk.js",
+    "static/media/brokendish.jpg": "/static/media/brokendish.723cad922b19a6c8cd50.jpg",
+    "static/media/brokenhandy.jpg": "/static/media/brokenhandy.5651f91c644316cea8b1.jpg",
+    "static/media/brokencar.png": "/static/media/brokencar.f2e90d3c4aa72be06d96.png",
+    "static/media/map.png": "/static/media/map.0becb3f03c5da73ed21e.png",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/question.png": "/static/media/question.ca059857ea454042340c.png",
+    "static/media/house.png": "/static/media/house.4bfe187e95991d047ea8.png",
+    "static/media/car.png": "/static/media/car.91a1ed4272d3f0fc9a46.png",
+    "static/media/padlock.png": "/static/media/padlock.43a6a0d799b48189c5eb.png",
+    "index.html": "/index.html",
+    "static/media/check.svg": "/static/media/check.811a046ee360e05216b987e4e4f0bd13.svg",
+    "main.790df153.css.map": "/static/css/main.790df153.css.map",
+    "main.e0ee049d.js.map": "/static/js/main.e0ee049d.js.map",
+    "488.54618227.chunk.js.map": "/static/js/488.54618227.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.790df153.css",
+    "static/js/main.e0ee049d.js"
+  ]
+}
