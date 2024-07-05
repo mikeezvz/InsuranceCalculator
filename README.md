@@ -8,7 +8,7 @@ Willkommen zum Privathaftpflichtversicherungs Rechner. Diese Anwendung hilft, de
 - [Komponenten](#komponenten)
 - [Navigation](#navigation)
 - [Abhängigkeiten](#abhängigkeiten)
-- [Deployment] (#deployment)
+- [Deployment auf Vercel](#deployment-auf-vercel)
 
 ## Installation
 
@@ -18,6 +18,8 @@ Um mit dem Projekt zu beginnen, klont man das Repository und wechselt dann in Pr
 git clone https://github.com/mikeezvz/InsuranceCalculator.git
 cd InsuranceCalculator
 npm install
+npm i express
+npm i react-router-dom
 ```
 
 ## Verwendung
@@ -71,7 +73,7 @@ npm i react-router-dom
 
 ## Deployment auf Vercel
 
-Unsere Anwendung wird auf Vercel gehostet. Vercel macht es super einfach, React-Apps zu hosten und automatisch zu aktualisieren. So funktioniert's:
+Die Anwendung wird auf Vercel gehostet. Vercel macht es super einfach, React-Apps zu hosten und automatisch zu aktualisieren. So funktioniert's:
 
 ### Schritte zum Deployment
 
@@ -171,7 +173,7 @@ npm i react-router-dom
 ```
 ## Deployment on Vercel
 
-Our application is hosted on Vercel. Vercel makes it super easy to host and automatically update React apps. Here's how it works:
+The application is hosted on Vercel. Vercel makes it super easy to host and automatically update React apps. Here's how it works:
 
 ### Steps to deployment
 
