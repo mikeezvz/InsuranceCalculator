@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Image, Container, Row, Col, Card } from 'react-bootstrap';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { Navbar, Nav, Image, Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import logo from './Zogly.png';
@@ -11,17 +11,10 @@ import AboutUs from './routes/aboutus';
 import Checkout from './routes/checkout';
 import Success from './routes/success';
 import Login from './routes/login';
-import Account from './routes/account';
+import MyAccount from './routes/account';
 
 function App() {
-const [user, setUser] = useState('');
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('username');
-    if (storedUser) {
-      setUser(storedUser);
-    }
-  }, []);
   return (
     <Router>
       <div className="App" translate='yes'>
@@ -36,19 +29,14 @@ const [user, setUser] = useState('');
                   <Navbar.Toggle aria-controls="basic-navbar-nav" />
                   <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                    {!user && (
-                      <Nav.Link as={Link} to="/">Login</Nav.Link>
-                    )}
-                    {user && (
-                      <Nav.Link as={Link} to="/account">{user}</Nav.Link>
-                    )}
                       <Nav.Link as={Link} to="/home">Home</Nav.Link>
                       <Nav.Link as={Link} to="/calculator">Calculator</Nav.Link>
                       <Nav.Link as={Link} to="/aboutus">About Us</Nav.Link>
                       <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                      <Nav.Link as={Link} to="/account">My Account</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto">
-                      <Nav.Link as={Link} to="/">Zogly</Nav.Link>
+                      <Nav.Link as={Link} to="/home">Zogly</Nav.Link>
                     </Nav>
                   </Navbar.Collapse>
                 </Navbar>
@@ -57,13 +45,13 @@ const [user, setUser] = useState('');
           </div>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/account" element={<MyAccount />} />
             <Route path="/home" element={<Home />} />
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/sucess" element={<Success />}/>
+            <Route path="/success" element={<Success />} />
           </Routes>
           <div className='Footer'>
             <Row>

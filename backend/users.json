@@ -2,16 +2,20 @@
     {
       "username": "user1",
       "password": "password1",
-      "plan": "Plan 1"
+      "plan": "Plan 1",
+      "paymentmethod":"TWINT"
     },
     {
       "username": "user2",
       "password": "password2",
-      "plan": "Plan 2"
+      "plan": "Plan 2",
+      "paymentmethod":"Apple Pay"
+
     },
     {
       "username": "user3",
       "password": "password3",
-      "plan": "Plan3"
+      "plan": "Plan3",
+      "paymentmethod":"Credit/-Debitcard"
     }
   ]

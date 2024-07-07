@@ -109,7 +109,7 @@ function Checkout() {
   };
 
   const handlePayment = () => {
-    navigate('/sucess')
+    navigate('/success')
   }
 
   return (
