@@ -10,7 +10,7 @@ function Account() {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await fetch('http://localhost:5000/user', {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/user`, {
           credentials: 'include'
         });
         if (response.ok) {
@@ -40,7 +40,7 @@ function Account() {
   }, [loading, user, navigate]);
 
   const handleLogout = async () => {
-    const response = await fetch('http://localhost:5000/logout', {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/logout`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
