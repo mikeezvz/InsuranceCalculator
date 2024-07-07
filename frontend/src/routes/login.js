@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
+    const response = await fetch('http://localhost:5000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

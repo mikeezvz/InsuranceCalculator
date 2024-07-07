@@ -1,6 +1,6 @@
 # About
 
-Willkommen zum Privathaftpflichtversicherungs Rechner. Diese Anwendung hilft, den Haftpflichtversicherungsschutz und die Kosten zu berechnen. Die App bietet Informationen über Standorte, die Versicherung, Deckung durch verschiedene Pläne, Inhalte der verschiedenen Pläne etc.
+Willkommen zum Privathaftpflichtversicherungs-Rechner. Dieses Projekt ist eine React-App, verknüpft mit einem Express-Backend. Diese Anwendung hilft, den Haftpflichtversicherungsschutz und die Kosten zu berechnen. Die App bietet Informationen über Standorte, die Versicherung, Deckung durch verschiedene Pläne, Inhalte der verschiedenen Pläne etc. Zudem kann man sich auch einloggen und das Benutzerkonto anschauen. 
 
 ## Inhaltsverzeichnis
 - [Installation](#installation)
@@ -8,7 +8,6 @@ Willkommen zum Privathaftpflichtversicherungs Rechner. Diese Anwendung hilft, de
 - [Komponenten](#komponenten)
 - [Navigation](#navigation)
 - [Abhängigkeiten](#abhängigkeiten)
-- [Deployment auf Vercel](#deployment-auf-vercel)
 
 ## Installation
 
@@ -17,43 +16,85 @@ Um mit dem Projekt zu beginnen, klont man das Repository und wechselt dann in Pr
 ``` bash
 git clone https://github.com/mikeezvz/InsuranceCalculator.git
 cd InsuranceCalculator
+cd frontend
 npm install
-npm i express
-npm i react-router-dom
+cd .. 
+cd backend
+npm install
 ```
 
 ## Verwendung
 
-Um den Entwicklungsserver zu starten, führen Sie aus:
+### Starten
+
+Der Command um das Projekt zu starten:
 ``` bash
+cd InsuranceCalculator
 npm start
 ```
 
-Öffne http://localhost:3000 in deinem Browser, um die App anzusehen.
+Öffne http://localhost:3000 im Browser, um die App anzusehen.
+http://localhost:5000 ist die Backend-URL.
+Anmerkung: Es muss nicht separat in das backend-Verzeichnis und dann in das frontend-Verzeichnis gewechselt werden damit Backend und Frontend läuft. Das package.json File im Root-Verzeichnis "InsuranceCalculator" wurde so konfiguriert, dass "npm start" beide Instanzen startet.
+
+### User
+
+Es git auch 3 bereits vorhandene User mit denen man sich einloggen kann. 
+
+user1
+password1
+user2
+password2
+user3
+password3
+
+Das Login ist Case-Sensitive.
 
 ## Komponenten
-### App.js
+### Frontend
+#### App.js
 Die Hauptkomponente, die das Routing und die Navigation einrichtet.
 
-### homepage.js
+#### home.js
 Homepage, Landing-Page
 
-### calculator.js
+#### calculator.js
 Seite mit Versicherungsrechner. Hier kann man den gewünschten Plan und Zusatzleistungen auswählen.
 
-### aboutus.js
+#### aboutus.js
 Seite mit Informationen über die Versicherung als Unternehmen.
 
-### contact.js 
+#### contact.js 
 Seite mit Kontaktformular. Hier kann man Betreff und Anliegen angeben.
+
+#### checkout.js
+Seite für die Zahlung wenn man beim Prämienrechner auf die nächste Seite geht
+
+#### success.js
+Seite mit einer Erfolgsmeldung, dass die Zahlung abgewickelt werden konnte. Diese ist rein ästhetisch.
+
+### Backend
+
+#### login.js
+Ein Endpoint um das Login abzuwickeln.
+
+#### logout.js
+Ein Endpoint, der die Session zerstört und den aktuell eingeloggten User ausloggt.
+
+#### user.js
+Ein Endpoint, der Informationen zur aktuell gespeicherten Session abrufen kann.
+
 
 ## Navigation
 
-Die App verwendet React Router für die Navigation. Die Datei App.js enthält die Routen-Konfiguration unter Verwendung des node_module `react-router-dom.`.
+Die React-App verwendet React Router für die Navigation. Die Datei App.js enthält die Routen-Konfiguration unter Verwendung des node_module `react-router-dom.`.
+Das Backend verwendet Express Router für eine saubere Struktur. Die Datei server.js enthält die Routen-Konfiguration unter Verwendung der integrierten Express- Funktion `express-router`
 
 ## Abhängigkeiten
 
 Das Projekt verwendet die folgenden Abhängigkeiten:
+
+Frontend
 
 ```
 React
@@ -62,56 +103,37 @@ React Router Dom
 Bootstrap
 ```
 
+Backend
+
+```
+Express
+Express Session
+CORS
+```
+
 Installiere alle Abhängigkeiten mit:
 
 ``` bash
+cd frontend
+npm install react react-bootstrap react-router-dom bootstrap
+cd ..
+cd backend
+npm install express express-session cors
 
-npm install
-npm i react-bootstrap
-npm i react-router-dom
 ```
-
-## Deployment auf Vercel
-
-Die Anwendung wird auf Vercel gehostet. Vercel macht es super einfach, React-Apps zu hosten und automatisch zu aktualisieren. So funktioniert's:
-
-### Schritte zum Deployment
-
-1. **Vercel-Konto erstellen**
-   - Gehe zu [vercel.com](https://vercel.com) und melde dich an oder erstelle ein neues Konto.
-
-2. **Projekt auf GitHub**
-   - Stelle sicher, dass unser React-Projekt auf GitHub liegt. Wenn nicht, erstelle ein neues Repository und pushe das Projekt dorthin.
-
-3. **Vercel mit GitHub verbinden**
-   - Melde dich bei Vercel an und gehe zu deinem Dashboard.
-   - Klicke auf "New Project" und dann auf "Import Git Repository".
-   - Erlaube Vercel den Zugriff auf deine GitHub-Repositories, falls noch nicht geschehen.
-   - Wähle das Repository mit deinem React-Projekt aus.
-
-4. **Projekt konfigurieren**
-   - Vercel erkennt normalerweise automatisch, dass es sich um ein React-Projekt handelt und stellt die Build- und Deploy-Skripte entsprechend ein.
-   - Überprüfe die Einstellungen und passe sie bei Bedarf an. Standardmäßig sollte das Build-Kommando `npm run build` und das Output-Verzeichnis `build` sein.
-
-5. **Deployment starten**
-   - Klicke auf "Deploy". Vercel wird das Projekt nun bauen und auf einer generierten URL bereitstellen.
-
-### Projekt verwalten
-Nach dem erfolgreichen Deployment kann man das Projekt im Vercel-Dashboard verwalten und weitere Einstellungen vornehmen. Jede Änderung, die man ins GitHub-Repository pushst, löst automatisch ein neues Deployment aus.
 
 ---------------------------------------------------------------
 
 # About
 
-Welcome to the personal liability insurance calculator. This application helps to calculate liability insurance coverage and costs. The app provides information about locations, insurance, coverage by different plans, contents of different plans etc.
+Welcome to the personal liability insurance calculator. This project is a React app, linked to an Express backend. This application helps to calculate liability insurance coverage and costs. The app provides information about locations, insurance, coverage by different plans, contents of different plans etc. Moreover, one can also log in and view the user account. 
 
-## Table of Contents
+## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Components](#components)
 - [Navigation](#navigation)
 - [Dependencies](#dependencies)
-- [Deployment] (#deployment)
 
 ## Installation
 
@@ -119,82 +141,109 @@ To start the project, clone the repository and then change to the project direct
 
 ``` bash
 git clone https://github.com/mikeezvz/InsuranceCalculator.git
-cd Insurancecalculator
+cd InsuranceCalculator
+cd frontend
+npm install
+cd .. 
+cd backend
 npm install
 ```
 
 ## Usage
 
-To start the development server, run:
+### Start
+
+The command to start the project:
 ``` bash
+cd InsuranceCalculator
 npm start
 ```
 
-Open http://localhost:3000 in your browser to view the app.
+Open http://localhost:3000 in the browser to view the app.
+http://localhost:5000 is the backend URL.
+Note: It is not necessary to change separately to the backend directory and then to the frontend directory for the backend and frontend to run. The package.json file in the root directory "InsuranceCalculator" has been configured so that "npm start" starts both instances.
+
+### User
+
+There are also 3 existing users with which you can log in. 
+
+user1
+password1
+user2
+password2
+user3
+password3
+
+The login is case-sensitive.
 
 ## Components
-### App.js
+### Frontend
+#### App.js
 The main component that sets up the routing and navigation.
 
-### homepage.js
+#### home.js
 Homepage, landing page
 
-### calculator.js
+#### calculator.js
 Page with insurance calculator. Here you can select the desired plan and additional services.
 
-### aboutus.js
+#### aboutus.js
 Page with information about the insurance company.
 
-### contact.js 
+#### contact.js 
 Page with contact form. Here you can enter subject and request.
+
+#### checkout.js
+Page for payment when you go to the next page of the premium calculator
+
+#### success.js
+Page with a success message that the payment has been processed. This is purely aesthetic.
+
+### Backend
+
+#### login.js
+An endpoint to process the login.
+
+#### logout.js
+An endpoint that destroys the session and logs out the currently logged in user.
+
+#### user.js
+An endpoint that can retrieve information about the currently saved session.
+
 
 ## Navigation
 
-The app uses React Router for navigation. The App.js file contains the route configuration using the node_module `react-router-dom.`.
+The React app uses React Router for navigation. The App.js file contains the route configuration using the node_module `react-router-dom.`.
+The backend uses Express Router for a clean structure. The server.js file contains the route configuration using the integrated Express function `express-router`.
 
 ## Dependencies
 
 The project uses the following dependencies:
 
+Frontend
+
 ```
 React
 React Bootstrap
 React Router Dom
-Bootstrap
+bootstrap
+```
+
+Backend
+
+```
+Express
+Express Session
+CORS
 ```
 
 Install all dependencies with:
 
 ``` bash
+cd frontend
+npm install react react-bootstrap react-router-dom bootstrap
+cd ..
+cd backend
+npm install express express-session cors
 
-npm install
-npm i react-bootstrap
-npm i react-router-dom
 ```
-## Deployment on Vercel
-
-The application is hosted on Vercel. Vercel makes it super easy to host and automatically update React apps. Here's how it works:
-
-### Steps to deployment
-
-1. **Create a Vercel account**
-   - Go to [vercel.com](https://vercel.com) and sign in or create a new account.
-
-2. **Project on GitHub**
-   - Make sure our React project is on GitHub. If not, create a new repository and push the project there.
-
-3 **Connect Vercel to GitHub**
-   - Log in to Vercel and go to your dashboard.
-   - Click on "New Project" and then on "Import Git Repository".
-   - Allow Vercel to access your GitHub repositories, if not already done.
-   - Select the repository with your React project.
-
-4 **Configure project**
-   - Vercel usually automatically recognizes that it is a React project and sets the build and deploy scripts accordingly.
-   - Check the settings and adjust them if necessary. By default, the build command should be `npm run build` and the output directory `build`.
-
-5 **Start deployment**
-   - Click on "Deploy". Vercel will now build the project and deploy it to a generated URL.
-
-### Manage project
-After successful deployment, you can manage the project in the Vercel dashboard and make further settings. Every change you push to the GitHub repository automatically triggers a new deployment.
