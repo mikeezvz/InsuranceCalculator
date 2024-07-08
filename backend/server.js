@@ -11,7 +11,7 @@ router.use(express.json());
 app.use(express.json());
 
 const corsOptions = {
-  origin: 'https://zogly.vercel.app/',
+  origin: 'http://localhost:3000',
   credentials: true, 
 };
 

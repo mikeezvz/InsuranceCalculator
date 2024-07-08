@@ -10,13 +10,13 @@ function Account() {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await fetch('https://zogly-backend.vercel.app/user', {
+        const response = await fetch('http://localhost:5000/user', {
           credentials: 'include'
         });
         if (response.ok) {
           const data = await response.json();
           console.log('User data:', data);
-          setUser(data.username);
+          setUser(data);
         } else {
           setUser(null);
           navigate('/');
@@ -40,7 +40,7 @@ function Account() {
   }, [loading, user, navigate]);
 
   const handleLogout = async () => {
-    const response = await fetch('https://zogly-backend.vercel.app/logout', {
+    const response = await fetch('http://localhost:5000/logout', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -64,10 +64,11 @@ function Account() {
     <div className='Account'>
       <h1>My Account</h1>
       <br/>
-      <h4>Welcome, {user}</h4>
+      <h4>Welcome, {user.username}</h4>
       <br/>
       <div className='plandetails'>
       <h2>Plan Details</h2>
+      <h4>Your Plan: {user.plan}</h4>
       </div>
       <br/>
       <Button onClick={handleLogout}>Logout</Button>
