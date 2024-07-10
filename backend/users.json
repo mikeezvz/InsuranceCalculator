@@ -2,20 +2,26 @@
     {
       "username": "user1",
       "password": "password1",
+      "persons":["Max Mustermann"],
       "plan": "Plan 1",
+      "costs":30,
       "paymentmethod":"TWINT"
     },
     {
       "username": "user2",
       "password": "password2",
+      "persons":["Max Mustermann", "Person 2"],
       "plan": "Plan 2",
+      "costs":100,
       "paymentmethod":"Apple Pay"
 
     },
     {
       "username": "user3",
       "password": "password3",
-      "plan": "Plan3",
+      "persons":["Max Mustermann", "Person 3"],
+      "plan": "Plan 3",
+      "costs":170,
       "paymentmethod":"Credit/-Debitcard"
     }
   ]

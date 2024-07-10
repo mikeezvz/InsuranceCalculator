@@ -1,4 +1,5 @@
 const express = require('express');
+const swaggerFile = require('./swagger-output.json');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
@@ -31,6 +32,12 @@ app.use('/logout', logoutRoute);
 
 const userRoute = require('./routes/user');
 app.use('/user', userRoute);
+
+const planRoute = require('./routes/changeplan');
+app.use('/renameplan', planRoute);
+
+const swaggerUI = require('swagger-ui-express');
+app.use('/documentation', swaggerUI.serve, swaggerUI.setup(swaggerFile, { explorer: true }));
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
